@@ -1,12 +1,17 @@
 <template>
  <div>
  <div>{{ text }}</div>
+ <div>{{ algo }}</div>
  </div>
 </template>
 
 <script>
+//@ = carpeta source "src"
+import base from '@/mixins/base';
+
 export default {
   name: "App",
+  mixins: [base],
   data(){
     return{
       text: "Hola Vue",
