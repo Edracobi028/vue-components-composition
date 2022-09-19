@@ -1,10 +1,10 @@
 <template>
     <div>{{ fullName }}</div>
+    <div>{{ username }}</div>
 </template>
 
 <script>
-import { exportSpecifier } from '@babel/types';
-import { toRefs, computed } from 'vue';
+import { toRefs, computed, inject } from 'vue';
 
     export default{
         props:{ 
@@ -17,12 +17,15 @@ import { toRefs, computed } from 'vue';
             const fullName = computed(() => {
                 return `${firstName.value} ${lastName.value} `;
             });
+
+            const username = inject("username");
+
             
             expose({ fullName,});//Enviamos por funcion expose
 
-
             return{
                 fullName,
+                username
             };
         },
     };
