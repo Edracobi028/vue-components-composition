@@ -1,33 +1,14 @@
 <template>
- <div>
- <div>{{ text }}</div>
- <div>{{ algo }}</div>
- </div>
+<Home></Home>
 </template>
 
 <script>
+import Home from "./components/Home.vue";
 //@ = carpeta source "src"
-import base from '@/mixins/base';
 
 export default {
-  name: "App",
-  mixins: [base],
-  data(){
-    return{
-      text: "Hola Vue",
-    };
-  },
-  //Funciones
-  beforeCreate(){
-    console.log("beforeCreate", this.$data, this.$el);
-  },
-  created(){
-    console.log("created", this.$data, this.$el);
-  },
-  mounted(){
-    console.log("mounted", this.$data, this.$el);
-  }
-
+    name: "App",
+    components: { Home }
 };
 </script>
 
